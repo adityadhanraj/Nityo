@@ -9,7 +9,7 @@ COPY ["Nityo/Nityo.csproj", "Nityo/"]
 RUN dotnet restore "Nityo/Nityo.csproj"
 COPY . .
 WORKDIR "/src/Nityo"
-RUN dotnet build "Nityo.csproj" -c Release -o /app/build
+RUN dotnet build "Nityo/Nityo.csproj" -c Release -o /app/build
 
 # Run NUnit tests
-RUN dotnet test "Nityo.csproj" --no-restore --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory /app/TestResults
+RUN dotnet test "Nityo/Nityo.csproj" --no-restore --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory /app/TestResults
