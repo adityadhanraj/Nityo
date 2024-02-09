@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Nityo": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
