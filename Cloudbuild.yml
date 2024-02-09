@@ -1,6 +1,6 @@
 steps:
   # Step 1: Use the official .NET SDK Docker image to build the .NET project
-  - name: 'mcr.microsoft.com/dotnet/sdk:5.0'
+  - name: 'mcr.microsoft.com/dotnet/sdk:6.0'
     entrypoint: 'bash'
     args:
       - '-c'
@@ -9,7 +9,7 @@ steps:
         dotnet build --configuration Release
 
   # Step 2: Run NUnit tests using the dotnet test command
-  - name: 'mcr.microsoft.com/dotnet/sdk:5.0'
+  - name: 'mcr.microsoft.com/dotnet/sdk:6.0'
     entrypoint: 'bash'
     args:
       - '-c'
