@@ -1,0 +1,20 @@
+steps:
+  # Step 1: Use the official .NET SDK Docker image to build the .NET project
+  - name: 'mcr.microsoft.com/dotnet/sdk:5.0'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        dotnet restore
+        dotnet build --configuration Release
+
+  # Step 2: Run NUnit tests using the dotnet test command
+  - name: 'mcr.microsoft.com/dotnet/sdk:5.0'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        dotnet test --no-restore --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory /workspace/TestResults
+
+# Specify timeout if needed
+timeout: '1800s'
