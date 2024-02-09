@@ -10,7 +10,7 @@ namespace Nityo
     [TestFixture]
     public class GetNextBirthdayTests
     {
-        private HttpClient _client;
+        private HttpClient _client ;
         private string _url;
 
         [SetUp]
