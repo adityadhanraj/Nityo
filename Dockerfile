@@ -12,12 +12,4 @@ WORKDIR "/src/Nityo"
 RUN dotnet build "Nityo.csproj" -c Release -o /app/build
 
 # Run NUnit tests
-RUN dotnet test Nityo.csproj--no-restore --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory /app/TestResults
-
-FROM build AS publish
-RUN dotnet publish "Nityo.csproj" -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Nityo.dll"]
+RUN dotnet test "Nityo.csproj" --no-restore --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory /app/TestResults
