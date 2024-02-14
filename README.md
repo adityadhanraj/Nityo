@@ -11,7 +11,7 @@ The `GetNextBirthday` functionality retrieves the next birthday based on the pro
 - NUnit
 - NUnit3TestAdapter
 - Moq
-- Nunit test sdk
+- .NET test sdk
 
 ## Setup
 
